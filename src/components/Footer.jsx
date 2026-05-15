@@ -50,7 +50,7 @@ const Footer = () => (
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/cheye-roberson"
+            href="https://www.linkedin.com/in/ch%C3%A9ye-roberson-883318b7?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
             target="_blank"
             rel="noopener noreferrer"
             className="footer__social-link"

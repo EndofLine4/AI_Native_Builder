@@ -118,7 +118,7 @@ const Hero = () => {
                 design in <strong>Figma</strong>, and build with <strong>AI</strong>.
                 As an AI Native Builder, I work with Claude, Gemini, GitHub Copilot,
                 and Perplexity to craft elegant digital experiences. With a background
-                in journalism, I bring keen research skills, analytics, and the ability
+                in journalism and media planning, I bring keen research skills, analytics, and the ability
                 to transform complex ideas into creative, accessible solutions.
               </p>
             </div>
