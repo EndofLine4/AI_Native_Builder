@@ -1,0 +1,288 @@
+@import '../index.scss';
+
+.about {
+  position: relative;
+  padding: 9rem 5rem 4rem;
+  background: linear-gradient(to bottom, $void 0%, $deep 40%, $shadow 100%);
+  overflow: hidden;
+
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__typewriter-art {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 0.25rem;
+
+    img {
+      width: 630px;
+      max-width: 90%;
+      opacity: 0.22;
+      display: block;
+    }
+  }
+
+  // Film grain texture
+  &__grain {
+    position: absolute;
+    inset: 0;
+    @include scanlines;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  // Section heading
+  &__masthead {
+    text-align: center;
+    margin: 3.5rem 0 4.5rem;
+  }
+
+  &__title {
+    @include screenplay-text;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    color: $silver;
+    letter-spacing: 8px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: $amber;
+      margin: 1.25rem auto 0;
+    }
+  }
+
+  // Two-column grid
+  &__layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 4rem;
+    align-items: stretch;
+  }
+
+  // ── Portrait frame ──────────────────────────────────────────────────────
+  &__portrait-frame {
+    @include film-border;
+    background: $deep;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  &__portrait-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+  }
+
+  &__portrait-art {
+    aspect-ratio: 4 / 5;
+    position: relative;
+    background: linear-gradient(150deg, $void 0%, $smoke 55%, rgba($amber, 0.04) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    overflow: hidden;
+    /*
+      ── ADD YOUR PORTRAIT ────────────────────────────────────────────────────
+      To use a real photo, add these styles (or set via React inline style):
+        background-image: url('/images/portrait.jpg');
+        background-size: cover;
+        background-position: center top;
+      ─────────────────────────────────────────────────────────────────────────
+    */
+  }
+
+  &__portrait-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 65% 85% at 72% 18%,
+      rgba($amber, 0.06) 0%,
+      transparent 68%
+    );
+  }
+
+  &__portrait-name {
+    font-family: $font-title;
+    font-size: 2.1rem;
+    font-weight: 900;
+    font-style: italic;
+    color: rgba($silver, 0.12);
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__portrait-plate {
+    padding: 0.9rem 1.4rem;
+    border-top: 1px solid rgba($amber, 0.2);
+    background: rgba($void, 0.6);
+
+    p {
+      @include screenplay-text;
+      font-size: 0.58rem;
+      color: rgba($silver, 0.38);
+      margin-bottom: 0.28rem;
+    }
+  }
+
+  &__portrait-role { color: rgba($amber, 0.65) !important; }
+
+  // ── Director's notes / bio ──────────────────────────────────────────────
+  &__director-notes {
+    background: rgba($smoke, 0.4);
+    border: 1px solid rgba($amber, 0.13);
+    padding: 2rem;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: rgba($amber, 0.45);
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__narrator {
+    @include screenplay-text;
+    font-size: 0.68rem;
+    color: $amber;
+    margin-bottom: 1rem;
+  }
+
+  &__note {
+    font-family: $font-serif;
+    font-size: 0.92rem;
+    line-height: 1.95;
+    color: rgba($silver, 0.62);
+    margin-bottom: 1.1rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  // ── Contact sheet ───────────────────────────────────────────────────────
+  &__sheet {
+    border: 1px solid rgba($amber, 0.18);
+    background: $deep;
+    overflow: hidden;
+  }
+
+  &__sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1.25rem;
+    background: rgba($amber, 0.05);
+    border-bottom: 1px solid rgba($amber, 0.18);
+  }
+
+  &__sheet-label {
+    @include screenplay-text;
+    font-size: 0.6rem;
+    color: rgba($amber, 0.55);
+  }
+
+  &__sheet-roll {
+    @include screenplay-text;
+    font-size: 0.6rem;
+    color: rgba($silver, 0.22);
+  }
+
+  &__sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba($amber, 0.08);
+  }
+
+  // ── Individual frame ────────────────────────────────────────────────────
+  &__frame {
+    position: relative;
+    padding: 1.6rem 1.35rem;
+    background: $shadow;
+    transition: background 0.3s ease;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba($amber, 0.04);
+      &::before { background: rgba($amber, 0.6); }
+    }
+
+    &--silver:hover::before { background: rgba($silver, 0.3); }
+  }
+
+  &__frame-num {
+    font-family: $font-screenplay;
+    font-size: 0.58rem;
+    color: rgba($silver, 0.18);
+    display: block;
+    margin-bottom: 0.65rem;
+  }
+
+  &__frame-title {
+    @include screenplay-text;
+    font-size: 0.82rem;
+    color: $silver;
+    margin-bottom: 0.7rem;
+  }
+
+  &__frame-body {
+    font-family: $font-serif;
+    font-size: 0.84rem;
+    line-height: 1.72;
+    color: rgba($silver, 0.48);
+  }
+
+  // ── Responsive ──────────────────────────────────────────────────────────
+  @media (max-width: 1200px) {
+    padding: 7rem 2.5rem;
+
+    &__layout {
+      grid-template-columns: 1fr;
+    }
+
+    &__portrait-frame {
+      max-width: 400px;
+    }
+
+    &__sheet-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 5rem 1.5rem;
+
+    &__sheet-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

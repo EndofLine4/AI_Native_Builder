@@ -1,0 +1,229 @@
+@import '../index.scss';
+
+.footer {
+  position: relative;
+  background: $void;
+  color: $silver;
+  padding: 8rem 5rem 3rem;
+  overflow: hidden;
+
+  // ── Atmosphere ──────────────────────────────────────────────────────────────
+  &__curtain {
+    position: absolute;
+    top: 0;
+    width: 160px;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+    &--left {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba(90, 8, 8, 0.35) 0%,
+        rgba(90, 8, 8, 0.18) 50%,
+        transparent 100%
+      );
+    }
+
+    &--right {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        rgba(90, 8, 8, 0.35) 0%,
+        rgba(90, 8, 8, 0.18) 50%,
+        transparent 100%
+      );
+    }
+  }
+
+  // Downward spotlight from top center
+  &__beam {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(
+      ellipse 60% 100% at 50% 0%,
+      rgba($amber, 0.06) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__grain {
+    position: absolute;
+    inset: 0;
+    @include scanlines;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  // ── Layout ──────────────────────────────────────────────────────────────────
+  &__container {
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  &__stage {
+    padding: 3rem 0 4rem;
+  }
+
+  // ── Title ────────────────────────────────────────────────────────────────────
+  &__title {
+    font-family: $font-title;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    font-style: italic;
+    color: $bright;
+    line-height: 1.08;
+    margin-bottom: 3.5rem;
+    text-shadow: 0 0 80px rgba($amber, 0.08);
+  }
+
+  // ── Dialogue block ───────────────────────────────────────────────────────────
+  &__dialogue {
+    max-width: 620px;
+    margin: 0 auto 3.5rem;
+  }
+
+  &__character {
+    @include screenplay-text;
+    font-size: 0.68rem;
+    color: $amber;
+    margin-bottom: 1rem;
+    display: block;
+    animation: flicker 9s ease-in-out infinite;
+  }
+
+  &__lines {
+    font-family: $font-serif;
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: rgba($silver, 0.6);
+  }
+
+  // ── Contact ──────────────────────────────────────────────────────────────────
+  &__contact {
+    margin-bottom: 3rem;
+  }
+
+  &__email {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    padding: 1.5rem 2.5rem;
+    border: 1px solid rgba($amber, 0.28);
+    background: rgba($amber, 0.04);
+    transition: all 0.35s ease;
+
+    &:hover {
+      background: rgba($amber, 0.08);
+      border-color: rgba($amber, 0.55);
+      box-shadow: 0 0 40px rgba($amber, 0.08);
+    }
+  }
+
+  &__email-label {
+    @include screenplay-text;
+    font-size: 0.58rem;
+    color: rgba($amber, 0.45);
+    letter-spacing: 3px;
+  }
+
+  &__email-address {
+    font-family: $font-screenplay;
+    font-size: 0.95rem;
+    color: $amber;
+  }
+
+  // ── Social links ─────────────────────────────────────────────────────────────
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  &__social-link {
+    @include screenplay-text;
+    font-size: 0.72rem;
+    color: rgba($silver, 0.45);
+    text-decoration: none;
+    padding: 0.55rem 1.2rem;
+    border: 1px solid rgba($silver, 0.13);
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $amber;
+      border-color: rgba($amber, 0.38);
+    }
+  }
+
+  // ── Film-strip end card ───────────────────────────────────────────────────────
+  &__end-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
+    margin: 3rem 0 2rem;
+    border-top:    1px solid rgba($silver, 0.07);
+    border-bottom: 1px solid rgba($silver, 0.07);
+  }
+
+  &__filmstrip {
+    display: flex;
+    gap: 3px;
+  }
+
+  &__filmstrip-frame {
+    width: 12px;
+    height: 9px;
+    border: 1px solid rgba($amber, 0.22);
+    background: rgba($amber, 0.03);
+    border-radius: 1px;
+  }
+
+  &__the-end {
+    @include screenplay-text;
+    font-size: 1.6rem;
+    color: $amber;
+    letter-spacing: 10px;
+    animation: flicker 12s ease-in-out infinite;
+    white-space: nowrap;
+  }
+
+  // ── Credits ───────────────────────────────────────────────────────────────────
+  &__credits {
+    text-align: center;
+
+    p {
+      @include screenplay-text;
+      font-size: 0.58rem;
+      color: rgba($silver, 0.22);
+      letter-spacing: 2px;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  // ── Responsive ────────────────────────────────────────────────────────────────
+  @media (max-width: 768px) {
+    padding: 5rem 1.5rem 2.5rem;
+
+    &__title { font-size: 2.2rem; }
+
+    &__social { flex-direction: column; align-items: center; gap: 1rem; }
+
+    &__end-card { gap: 1.5rem; }
+
+    &__filmstrip { display: none; }
+  }
+}

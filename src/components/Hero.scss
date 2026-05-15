@@ -1,0 +1,386 @@
+@import '../index.scss';
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-color: $void;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  // ── Video background ──────────────────────────────────────────────────────
+  &__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.28;
+    z-index: 1;
+  }
+
+  // ── Atmosphere layers ─────────────────────────────────────────────────────
+  &__rain {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &__venetian {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0px,
+      rgba(0, 0, 0, 0.55) 10px,
+      transparent 10px,
+      transparent 28px
+    );
+    animation: venetian-drift 4s linear infinite;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0.25;
+  }
+
+  // Light source entering from the right (classic noir window)
+  &__window-light {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to left,
+      rgba(248, 232, 180, 0.07) 0%,
+      rgba(248, 232, 180, 0.03) 35%,
+      transparent 65%
+    );
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  &__spotlight {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 50% 90% at 68% 38%,
+      rgba(248, 236, 192, 0.09) 0%,
+      transparent 70%
+    );
+    animation: spotlight-sweep 14s ease-in-out infinite;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  &__vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 38%,
+      rgba(0, 0, 0, 0.88) 100%
+    );
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  // ── Cinematic letterbox bars ──────────────────────────────────────────────
+  &__bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: $void;
+    z-index: 20;
+
+    &--top    { top: 0;    height: 7vh; }
+    &--bottom { bottom: 0; height: 7vh; }
+  }
+
+  // ── Stage / content ───────────────────────────────────────────────────────
+  &__stage {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    padding: 13vh 5rem 10vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__scene-info {
+    margin-bottom: 3rem;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 4.5rem;
+    align-items: start;
+  }
+
+  // ── Title ─────────────────────────────────────────────────────────────────
+  &__title {
+    font-family: $font-title;
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
+    font-weight: 900;
+    font-style: italic;
+    color: $bright;
+    line-height: 1.08;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 0 80px rgba($amber, 0.14);
+    animation: burn-in 1.8s ease-out;
+  }
+
+  // ── Quote ─────────────────────────────────────────────────────────────────
+  &__quote {
+    position: relative;
+    padding: 1.5rem 1.75rem 1.5rem 2.25rem;
+    margin-bottom: 2.5rem;
+    border-left: 2px solid rgba($amber, 0.5);
+    background: rgba($shadow, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  &__quote-mark {
+    position: absolute;
+    top: -1.2rem;
+    left: 1rem;
+    font-family: $font-title;
+    font-size: 5.5rem;
+    color: rgba($amber, 0.25);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  &__quote-text {
+    font-family: $font-title;
+    font-size: 1.18rem;
+    font-style: italic;
+    color: $fog;
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
+  }
+
+  &__quote-author {
+    @include screenplay-text;
+    font-size: 0.72rem;
+    color: $amber;
+    font-style: normal;
+  }
+
+  // ── Action description (screenplay format) ────────────────────────────────
+  &__action {
+    @include screenplay-text;
+    font-size: 0.78rem;
+    line-height: 2;
+    color: rgba($silver, 0.68);
+    margin-bottom: 2.25rem;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba($amber, 0.18);
+    border-bottom: 1px solid rgba($amber, 0.18);
+    background: rgba($shadow, 0.3);
+    letter-spacing: 1.4px;
+
+    p { font-size: 0.78rem; }
+  }
+
+  // ── Bio intro ─────────────────────────────────────────────────────────────
+  &__intro {
+    font-family: $font-serif;
+    font-size: 1rem;
+    line-height: 1.95;
+    color: rgba($silver, 0.78);
+
+    strong {
+      color: $amber;
+      font-weight: 600;
+    }
+  }
+
+  // ── Portrait frame ────────────────────────────────────────────────────────
+  &__portrait-frame {
+    @include film-border;
+    background: $deep;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 18, 65, 0.39);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    // Film grain overlay
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      @include scanlines;
+      pointer-events: none;
+      z-index: 3;
+    }
+  }
+
+  &__portrait-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: relative;
+    z-index: 1;
+    filter: grayscale(0.15) contrast(1.05) brightness(0.95);
+    transition: filter 0.4s ease;
+  }
+
+  &__portrait-placeholder {
+    aspect-ratio: 3 / 4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(
+      160deg,
+      $smoke 0%,
+      $deep  60%,
+      rgba($amber, 0.04) 100%
+    );
+    /*
+      ── TO ADD A REAL PHOTO ────────────────────────────────────────────────
+      Copy your portrait to public/images/portrait.jpg, then set:
+        background-image: url('/images/portrait.jpg');
+        background-size: cover;
+        background-position: center top;
+      ────────────────────────────────────────────────────────────────────────
+    */
+    overflow: hidden;
+  }
+
+  &__portrait-light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 70% 90% at 75% 15%,
+      rgba($amber, 0.07) 0%,
+      transparent 70%
+    );
+  }
+
+  &__portrait-initials {
+    font-family: $font-title;
+    font-size: 5.5rem;
+    font-style: italic;
+    color: rgba($amber, 0.22);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__portrait-tag {
+    @include screenplay-text;
+    font-size: 0.58rem;
+    color: rgba($amber, 0.22);
+    letter-spacing: 5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__portrait-meta {
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid rgba($amber, 0.18);
+    background: rgba($void, 0.7);
+    position: relative;
+    z-index: 2;
+
+    p {
+      @include screenplay-text;
+      font-size: 0.6rem;
+      color: rgba($silver, 0.45);
+      margin-bottom: 0.3rem;
+
+      &:first-child {
+        color: $amber;
+        font-size: 0.7rem;
+        margin-bottom: 0.45rem;
+      }
+    }
+  }
+
+  &__portrait-name {
+    color: $amber !important;
+  }
+
+  // ── Sprocket strip ────────────────────────────────────────────────────────
+  &__sprockets {
+    position: absolute;
+    bottom: 7vh;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px 5rem;
+    gap: 1.25rem;
+    overflow: hidden;
+    border-top:    1px solid rgba($amber, 0.1);
+    border-bottom: 1px solid rgba($amber, 0.1);
+    background: rgba($void, 0.5);
+  }
+
+  &__sprocket-hole {
+    width: 18px;
+    height: 14px;
+    border: 1px solid rgba($amber, 0.18);
+    border-radius: 3px;
+    flex-shrink: 0;
+    background: $void;
+  }
+
+  &__cut {
+    position: absolute;
+    bottom: 7.6vh;
+    right: 5rem;
+    z-index: 16;
+
+    span {
+      @include screenplay-text;
+      font-size: 0.72rem;
+      color: rgba($amber, 0.45);
+    }
+  }
+
+  // ── Responsive ────────────────────────────────────────────────────────────
+  @media (max-width: 1100px) {
+    &__layout {
+      grid-template-columns: 1fr;
+    }
+
+    &__portrait {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    &__stage {
+      padding: 12vh 2.5rem 10vh;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__title        { font-size: 2.2rem; }
+    &__bar          { height: 5vh; }
+    &__sprockets    { padding: 4px 1.5rem; gap: 0.8rem; }
+    &__cut          { right: 1.5rem; }
+
+    &__stage {
+      padding: 10vh 1.5rem 9vh;
+    }
+  }
+}

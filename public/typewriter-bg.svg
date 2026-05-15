@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- Paper in platen -->
+  <rect x="358" y="12" width="184" height="135" rx="2" stroke-width="1.5"/>
+  <line x1="378" y1="36" x2="522" y2="36" stroke-width="0.7" stroke-opacity="0.45"/>
+  <line x1="378" y1="52" x2="522" y2="52" stroke-width="0.7" stroke-opacity="0.45"/>
+  <line x1="378" y1="68" x2="522" y2="68" stroke-width="0.7" stroke-opacity="0.45"/>
+  <line x1="378" y1="84" x2="522" y2="84" stroke-width="0.7" stroke-opacity="0.45"/>
+  <line x1="378" y1="100" x2="522" y2="100" stroke-width="0.7" stroke-opacity="0.45"/>
+  <line x1="378" y1="116" x2="522" y2="116" stroke-width="0.7" stroke-opacity="0.45"/>
+  <line x1="356" y1="20" x2="356" y2="147" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Platen housing -->
+  <rect x="128" y="140" width="644" height="82" rx="10" stroke-width="2.2"/>
+  <rect x="145" y="150" width="610" height="58" rx="29" stroke-width="1.8"/>
+  <line x1="200" y1="150" x2="200" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="240" y1="150" x2="240" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="280" y1="150" x2="280" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="320" y1="150" x2="320" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="360" y1="150" x2="360" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="400" y1="150" x2="400" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="440" y1="150" x2="440" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="480" y1="150" x2="480" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="520" y1="150" x2="520" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="560" y1="150" x2="560" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="600" y1="150" x2="600" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="640" y1="150" x2="640" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="680" y1="150" x2="680" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+  <line x1="712" y1="150" x2="712" y2="208" stroke-width="0.7" stroke-opacity="0.32"/>
+
+  <!-- Left platen knob -->
+  <circle cx="137" cy="179" r="26" stroke-width="2"/>
+  <circle cx="137" cy="179" r="17" stroke-width="1.2"/>
+  <circle cx="137" cy="179" r="7" stroke-width="1.8"/>
+  <line x1="137" y1="153" x2="137" y2="162" stroke-width="1.2"/>
+  <line x1="137" y1="196" x2="137" y2="205" stroke-width="1.2"/>
+  <line x1="111" y1="179" x2="120" y2="179" stroke-width="1.2"/>
+  <line x1="154" y1="179" x2="163" y2="179" stroke-width="1.2"/>
+  <line x1="119" y1="161" x2="126" y2="168" stroke-width="1"/>
+  <line x1="148" y1="168" x2="155" y2="161" stroke-width="1"/>
+  <line x1="119" y1="197" x2="126" y2="190" stroke-width="1"/>
+  <line x1="148" y1="190" x2="155" y2="197" stroke-width="1"/>
+
+  <!-- Right platen knob -->
+  <circle cx="763" cy="179" r="26" stroke-width="2"/>
+  <circle cx="763" cy="179" r="17" stroke-width="1.2"/>
+  <circle cx="763" cy="179" r="7" stroke-width="1.8"/>
+  <line x1="763" y1="153" x2="763" y2="162" stroke-width="1.2"/>
+  <line x1="763" y1="196" x2="763" y2="205" stroke-width="1.2"/>
+  <line x1="737" y1="179" x2="746" y2="179" stroke-width="1.2"/>
+  <line x1="780" y1="179" x2="789" y2="179" stroke-width="1.2"/>
+  <line x1="745" y1="161" x2="752" y2="168" stroke-width="1"/>
+  <line x1="774" y1="168" x2="781" y2="161" stroke-width="1"/>
+  <line x1="745" y1="197" x2="752" y2="190" stroke-width="1"/>
+  <line x1="774" y1="190" x2="781" y2="197" stroke-width="1"/>
+
+  <!-- Paper guide clips -->
+  <rect x="245" y="134" width="9" height="22" rx="3" stroke-width="1.2"/>
+  <rect x="302" y="131" width="7" height="26" rx="3" stroke-width="1.2"/>
+  <rect x="591" y="131" width="7" height="26" rx="3" stroke-width="1.2"/>
+  <rect x="649" y="134" width="9" height="22" rx="3" stroke-width="1.2"/>
+
+  <!-- Carriage rail -->
+  <rect x="108" y="220" width="684" height="12" rx="4" stroke-width="1.8"/>
+  <rect x="380" y="216" width="60" height="20" rx="3" stroke-width="1.2"/>
+
+  <!-- Carriage return lever -->
+  <path d="M 785 222 Q 822 204 828 176 Q 830 156 818 146" stroke-width="2"/>
+  <circle cx="828" cy="176" r="8" stroke-width="1.5"/>
+
+  <!-- Main body (trapezoid) -->
+  <path d="M 88 230 L 812 230 L 830 520 L 70 520 Z" stroke-width="2.5"/>
+  <path d="M 110 250 L 790 250 L 806 505 L 94 505 Z" stroke-width="1" stroke-opacity="0.45"/>
+  <line x1="156" y1="250" x2="162" y2="505" stroke-width="0.8" stroke-opacity="0.38"/>
+  <line x1="738" y1="250" x2="738" y2="505" stroke-width="0.8" stroke-opacity="0.38"/>
+
+  <!-- Side panel hatching left -->
+  <line x1="112" y1="270" x2="158" y2="270" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="112" y1="283" x2="158" y2="283" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="112" y1="296" x2="158" y2="296" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="112" y1="309" x2="158" y2="309" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="112" y1="322" x2="158" y2="322" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="112" y1="335" x2="158" y2="335" stroke-width="0.6" stroke-opacity="0.32"/>
+
+  <!-- Side panel hatching right -->
+  <line x1="742" y1="270" x2="788" y2="270" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="742" y1="283" x2="788" y2="283" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="742" y1="296" x2="788" y2="296" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="742" y1="309" x2="788" y2="309" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="742" y1="322" x2="788" y2="322" stroke-width="0.6" stroke-opacity="0.32"/>
+  <line x1="742" y1="335" x2="788" y2="335" stroke-width="0.6" stroke-opacity="0.32"/>
+
+  <!-- Left ribbon spool -->
+  <circle cx="265" cy="290" r="40" stroke-width="1.8"/>
+  <circle cx="265" cy="290" r="26" stroke-width="1.2"/>
+  <circle cx="265" cy="290" r="10" stroke-width="1.8"/>
+  <line x1="265" y1="264" x2="265" y2="280" stroke-width="1.2"/>
+  <line x1="265" y1="300" x2="265" y2="316" stroke-width="1.2"/>
+  <line x1="239" y1="290" x2="255" y2="290" stroke-width="1.2"/>
+  <line x1="275" y1="290" x2="291" y2="290" stroke-width="1.2"/>
+  <line x1="247" y1="272" x2="257" y2="282" stroke-width="1"/>
+  <line x1="273" y1="282" x2="283" y2="272" stroke-width="1"/>
+  <line x1="247" y1="308" x2="257" y2="298" stroke-width="1"/>
+  <line x1="273" y1="298" x2="283" y2="308" stroke-width="1"/>
+
+  <!-- Right ribbon spool -->
+  <circle cx="635" cy="290" r="40" stroke-width="1.8"/>
+  <circle cx="635" cy="290" r="26" stroke-width="1.2"/>
+  <circle cx="635" cy="290" r="10" stroke-width="1.8"/>
+  <line x1="635" y1="264" x2="635" y2="280" stroke-width="1.2"/>
+  <line x1="635" y1="300" x2="635" y2="316" stroke-width="1.2"/>
+  <line x1="609" y1="290" x2="625" y2="290" stroke-width="1.2"/>
+  <line x1="645" y1="290" x2="661" y2="290" stroke-width="1.2"/>
+  <line x1="617" y1="272" x2="627" y2="282" stroke-width="1"/>
+  <line x1="643" y1="282" x2="653" y2="272" stroke-width="1"/>
+  <line x1="617" y1="308" x2="627" y2="298" stroke-width="1"/>
+  <line x1="643" y1="298" x2="653" y2="308" stroke-width="1"/>
+
+  <!-- Ribbon between spools -->
+  <path d="M 305 285 Q 450 268 595 285" stroke-width="1.5"/>
+  <path d="M 305 290 Q 450 273 595 290" stroke-width="1"/>
+
+  <!-- Type basket guide arc -->
+  <path d="M 172 348 Q 450 325 728 348" stroke-width="1.5"/>
+
+  <!-- Type bars left side -->
+  <line x1="184" y1="384" x2="448" y2="336" stroke-width="0.9" stroke-opacity="0.55"/>
+  <line x1="203" y1="386" x2="449" y2="337" stroke-width="0.8" stroke-opacity="0.48"/>
+  <line x1="222" y1="388" x2="449" y2="337" stroke-width="0.8" stroke-opacity="0.43"/>
+  <line x1="242" y1="390" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.4"/>
+  <line x1="262" y1="391" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.38"/>
+  <line x1="282" y1="392" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.38"/>
+  <line x1="302" y1="393" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="322" y1="394" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="342" y1="394" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="362" y1="395" x2="451" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="382" y1="395" x2="451" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+
+  <!-- Type bars right side -->
+  <line x1="716" y1="384" x2="452" y2="336" stroke-width="0.9" stroke-opacity="0.55"/>
+  <line x1="697" y1="386" x2="451" y2="337" stroke-width="0.8" stroke-opacity="0.48"/>
+  <line x1="678" y1="388" x2="451" y2="337" stroke-width="0.8" stroke-opacity="0.43"/>
+  <line x1="658" y1="390" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.4"/>
+  <line x1="638" y1="391" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.38"/>
+  <line x1="618" y1="392" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.38"/>
+  <line x1="598" y1="393" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="578" y1="394" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="558" y1="394" x2="450" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="538" y1="395" x2="451" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+  <line x1="518" y1="395" x2="451" y2="337" stroke-width="0.8" stroke-opacity="0.36"/>
+
+  <!-- Keyboard Row 1 (top/QWERTY row) y=373 — 12 keys -->
+  <circle cx="218" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="218" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="260" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="260" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="302" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="302" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="344" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="344" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="386" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="386" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="428" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="428" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="470" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="470" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="512" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="512" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="554" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="554" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="596" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="596" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="638" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="638" cy="373" r="10" stroke-width="0.8"/>
+  <circle cx="680" cy="373" r="16" stroke-width="1.5"/>
+  <circle cx="680" cy="373" r="10" stroke-width="0.8"/>
+
+  <!-- Keyboard Row 2 (ASDF row) y=413 — 13 keys -->
+  <circle cx="197" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="197" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="239" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="239" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="281" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="281" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="323" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="323" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="365" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="365" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="407" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="407" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="449" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="449" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="491" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="491" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="533" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="533" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="575" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="575" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="617" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="617" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="659" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="659" cy="413" r="10" stroke-width="0.8"/>
+  <circle cx="701" cy="413" r="16" stroke-width="1.5"/>
+  <circle cx="701" cy="413" r="10" stroke-width="0.8"/>
+
+  <!-- Keyboard Row 3 (ZXCV row) y=453 — 12 keys -->
+  <circle cx="218" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="218" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="260" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="260" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="302" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="302" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="344" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="344" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="386" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="386" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="428" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="428" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="470" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="470" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="512" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="512" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="554" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="554" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="596" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="596" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="638" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="638" cy="453" r="10" stroke-width="0.8"/>
+  <circle cx="680" cy="453" r="16" stroke-width="1.5"/>
+  <circle cx="680" cy="453" r="10" stroke-width="0.8"/>
+
+  <!-- Keyboard Row 4 (number row) y=491 — 14 keys -->
+  <circle cx="155" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="155" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="197" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="197" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="239" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="239" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="281" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="281" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="323" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="323" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="365" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="365" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="407" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="407" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="449" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="449" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="491" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="491" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="533" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="533" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="575" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="575" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="617" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="617" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="659" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="659" cy="491" r="10" stroke-width="0.8"/>
+  <circle cx="701" cy="491" r="16" stroke-width="1.5"/>
+  <circle cx="701" cy="491" r="10" stroke-width="0.8"/>
+
+  <!-- Space bar -->
+  <rect x="295" y="520" width="310" height="22" rx="11" stroke-width="2"/>
+
+  <!-- Base feet -->
+  <rect x="100" y="518" width="62" height="16" rx="5" stroke-width="1.5"/>
+  <rect x="738" y="518" width="62" height="16" rx="5" stroke-width="1.5"/>
+
+</svg>

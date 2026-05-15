@@ -1,0 +1,372 @@
+@import '../index.scss';
+
+.projects {
+  position: relative;
+  padding: 4rem 5rem 9rem;
+  background: $shadow;
+  overflow: hidden;
+
+  &__grain {
+    position: absolute;
+    inset: 0;
+    @include scanlines;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  // ── Theater marquee ────────────────────────────────────────────────────────
+  &__marquee {
+    text-align: center;
+    margin: 4rem 0 5rem;
+  }
+
+  &__marquee-stars {
+    @include screenplay-text;
+    font-size: 0.7rem;
+    color: rgba($amber, 0.3);
+    letter-spacing: 10px;
+    display: block;
+    margin: 0.6rem 0;
+  }
+
+  &__headline {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1.75rem;
+    line-height: 1;
+    font-family: $font-title;
+    font-weight: 900;
+  }
+
+  &__now {
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-style: italic;
+    color: $amber;
+    text-shadow: 0 0 60px rgba($amber, 0.2);
+  }
+
+  &__showing {
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    font-style: italic;
+    color: $silver;
+  }
+
+  &__sub {
+    @include screenplay-text;
+    font-size: 0.8rem;
+    color: rgba($silver, 0.3);
+    letter-spacing: 7px;
+    margin-top: 1rem;
+    display: block;
+  }
+
+  // ── Poster grid ────────────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 6rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ── Movie poster card ──────────────────────────────────────────────────────────
+.poster {
+  position: relative;
+  background: $deep;
+  border: 1px solid rgba($amber, 0.14);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  &--linked:hover {
+    border-color: rgba($amber, 0.5);
+  }
+
+  &--pending {
+    cursor: pointer;
+  }
+
+  // ── Pending re-deploy overlay ──────────────────────────────────────────
+  &__pending-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: rgba($void, 0.93);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pendingFadeIn 0.2s ease forwards;
+    cursor: pointer;
+  }
+
+  &__pending-notice {
+    text-align: center;
+    padding: 2.2rem 2.8rem;
+    border: 1px solid rgba($amber, 0.38);
+    border-top: 3px solid $amber;
+    background: rgba($deep, 0.7);
+    max-width: 280px;
+  }
+
+  &__pending-stars {
+    display: block;
+    @include screenplay-text;
+    font-size: 0.62rem;
+    color: rgba($amber, 0.45);
+    letter-spacing: 10px;
+
+    &:first-child { margin-bottom: 1.2rem; }
+    &:last-child  { margin-top: 1.2rem; }
+  }
+
+  &__pending-label {
+    @include screenplay-text;
+    font-size: 0.56rem;
+    color: rgba($amber, 0.55);
+    letter-spacing: 3px;
+    margin-bottom: 0.9rem;
+  }
+
+  &__pending-title {
+    font-family: $font-title;
+    font-size: 1.7rem;
+    font-weight: 900;
+    font-style: italic;
+    color: $amber;
+    line-height: 1.15;
+    text-shadow: 0 0 40px rgba($amber, 0.25);
+    margin: 0;
+  }
+
+  &__pending-sub {
+    font-family: $font-serif;
+    font-size: 0.78rem;
+    color: rgba($silver, 0.4);
+    margin-top: 0.75rem;
+    font-style: italic;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba($amber, 0.35);
+    box-shadow:
+      0 24px 64px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba($amber, 0.2);
+  }
+
+  // ── Image area ──────────────────────────────────────────────────────────
+  &__img-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.2) contrast(1.1);
+    transition: filter 0.4s ease;
+
+    .poster:hover & {
+      filter: grayscale(0) contrast(1);
+    }
+  }
+
+  // Gradient placeholder — replaced by real image when img prop is set
+  &__img-placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+    pointer-events: none;
+  }
+
+  // Tone colors — shown when no real image is present
+  &--midnight &__img-placeholder { background: linear-gradient(135deg, #04040e, #0b0b22); }
+  &--amber    &__img-placeholder { background: linear-gradient(135deg, #120900, #251500); }
+  &--teal     &__img-placeholder { background: linear-gradient(135deg, #001412, #002422); }
+  &--crimson  &__img-placeholder { background: linear-gradient(135deg, #120303, #220404); }
+
+  &__scene-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    @include screenplay-text;
+    font-size: 0.62rem;
+    color: $amber;
+    background: rgba($void, 0.82);
+    padding: 0.28rem 0.6rem;
+    border: 1px solid rgba($amber, 0.28);
+  }
+
+  // ── Poster body ──────────────────────────────────────────────────────────
+  &__body {
+    padding: 2rem;
+    border-top: 2px solid rgba($amber, 0.18);
+  }
+
+  &__category {
+    @include screenplay-text;
+    font-size: 0.62rem;
+    color: rgba($amber, 0.6);
+    margin-bottom: 0.45rem;
+  }
+
+  &__title {
+    font-family: $font-title;
+    font-size: 1.85rem;
+    font-weight: 900;
+    color: $silver;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  &__tagline {
+    font-family: $font-title;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba($amber, 0.65);
+    margin-bottom: 1.2rem;
+  }
+
+  &__description {
+    font-family: $font-serif;
+    font-size: 0.9rem;
+    line-height: 1.82;
+    color: rgba($silver, 0.55);
+    margin-bottom: 1.5rem;
+  }
+
+  &__credits {
+    border-top: 1px solid rgba($amber, 0.1);
+    padding-top: 1.2rem;
+  }
+
+  &__credits-label {
+    @include screenplay-text;
+    font-size: 0.58rem;
+    color: rgba($amber, 0.45);
+    margin-bottom: 0.7rem;
+  }
+
+  &__tech {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    li {
+      @include screenplay-text;
+      font-size: 0.58rem;
+      color: rgba($silver, 0.45);
+      padding: 0.18rem 0.5rem;
+      border: 1px solid rgba($silver, 0.14);
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// ── Shorts section ─────────────────────────────────────────────────────────────
+.shorts {
+  border-top: 1px solid rgba($amber, 0.12);
+  padding-top: 3.5rem;
+
+  &__header {
+    margin-bottom: 2.25rem;
+  }
+
+  &__title {
+    @include screenplay-text;
+    font-size: 1.15rem;
+    color: $silver;
+    letter-spacing: 3px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.short-card {
+  background: $deep;
+  border: 1px solid rgba($amber, 0.1);
+  border-left: 3px solid rgba($amber, 0.35);
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-left-color: $amber;
+    background: rgba($amber, 0.025);
+  }
+
+  &__title {
+    font-family: $font-title;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $silver;
+    margin-bottom: 0.7rem;
+  }
+
+  &__desc {
+    font-family: $font-serif;
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba($silver, 0.5);
+    margin-bottom: 1.2rem;
+  }
+
+  &__tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    span {
+      @include screenplay-text;
+      font-size: 0.56rem;
+      color: rgba($silver, 0.32);
+      padding: 0.15rem 0.4rem;
+      border: 1px solid rgba($silver, 0.1);
+    }
+  }
+}
+
+@keyframes pendingFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 5rem 1.5rem;
+  }
+}

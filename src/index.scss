@@ -1,0 +1,165 @@
+// ─── NOIR PALETTE ────────────────────────────────────────────────────────────
+$void:        #070707;
+$deep:        #0d0d0d;
+$shadow:      #161616;
+$smoke:       #252525;
+$steel:       #3a3a3a;
+$silver:      #c8c4bc;
+$fog:         #e8e4dc;
+$bright:      #f5f1e8;
+$amber:       #d4941a;
+$gold:        #f0b429;
+$danger:      #7a1515;
+$sepia:       #8b7040;
+
+// ─── TYPOGRAPHY ──────────────────────────────────────────────────────────────
+$font-screenplay: 'Courier Prime', 'Courier New', monospace;
+$font-title:      'Playfair Display', Georgia, serif;
+$font-serif:      'Lora', Georgia, serif;
+$font-typewriter: 'Special Elite', 'Courier Prime', monospace;
+
+// ─── MIXINS ──────────────────────────────────────────────────────────────────
+@mixin screenplay-text {
+  font-family: $font-screenplay;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@mixin neon($color: $amber) {
+  text-shadow:
+    0 0 8px  $color,
+    0 0 16px $color,
+    0 0 32px rgba($color, 0.4);
+}
+
+@mixin film-border {
+  border: 1px solid rgba($amber, 0.35);
+  box-shadow:
+    0 0 0 1px rgba($amber, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.85);
+}
+
+@mixin scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.013) 0px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+@mixin vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+// ─── KEYFRAMES ───────────────────────────────────────────────────────────────
+@keyframes flicker {
+  0%,  91%,  100% { opacity: 1; }
+  92%              { opacity: 0.72; }
+  93%              { opacity: 1; }
+  94%              { opacity: 0.44; }
+  95%              { opacity: 0.9; }
+  96%              { opacity: 0.2; }
+  97%              { opacity: 1; }
+}
+
+@keyframes neon-pulse {
+  0%,  100% { @include neon($amber); }
+  50%        { text-shadow: 0 0 4px rgba($amber, 0.5); }
+}
+
+@keyframes venetian-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 0 28px; }
+}
+
+@keyframes spotlight-sweep {
+  0%,  100% { opacity: 0.05; background-position: -60% 40%; }
+  50%        { opacity: 0.10; background-position: 160% 40%; }
+}
+
+@keyframes burn-in {
+  0%   { opacity: 0; filter: brightness(3) saturate(0); transform: scale(1.03); }
+  100% { opacity: 1; filter: brightness(1) saturate(1); transform: scale(1); }
+}
+
+@keyframes reel-advance {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes curtain-rise {
+  from { transform: scaleY(1); transform-origin: top; }
+  to   { transform: scaleY(0); transform-origin: top; }
+}
+
+// ─── GLOBAL RESET ────────────────────────────────────────────────────────────
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-serif;
+  background-color: $void;
+  color: $silver;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// ─── SHARED COMPONENTS ───────────────────────────────────────────────────────
+.scene-heading {
+  @include screenplay-text;
+  font-size: 0.78rem;
+  color: rgba($amber, 0.65);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba($amber, 0.18);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+
+  .scene-number {
+    color: $amber;
+    font-weight: bold;
+  }
+
+  .scene-location {
+    font-weight: normal;
+    opacity: 0.85;
+  }
+}
+
+.screenplay-marker {
+  @include screenplay-text;
+  font-size: 0.68rem;
+  color: $amber;
+  display: block;
+  margin-bottom: 0.5rem;
+  animation: flicker 9s ease-in-out infinite;
+}
+
+.transition {
+  @include screenplay-text;
+  text-align: right;
+  margin: 3rem 0 0;
+  font-size: 0.78rem;
+  color: rgba($amber, 0.5);
+}
+
+.scene-marker {
+  @include screenplay-text;
+  font-size: 0.65rem;
+  color: rgba($amber, 0.5);
+  display: block;
+  margin-bottom: 0.5rem;
+}
