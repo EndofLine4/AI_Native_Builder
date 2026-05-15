@@ -64,12 +64,20 @@
     display: flex;
     gap: 4px;
     padding: 0 4px;
-    animation: reel-advance 28s linear infinite;
+    animation: reel-advance 42s linear infinite;
     width: max-content;
 
     &:hover {
       animation-play-state: paused;
     }
+  }
+
+  // Anchor wrapper for clickable frames
+  &__frame-anchor {
+    display: block;
+    flex-shrink: 0;
+    text-decoration: none;
+    line-height: 0; // eliminates baseline gap below figure
   }
 
   // Individual frame
@@ -86,6 +94,17 @@
 
     &:hover {
       border-color: rgba($amber, 0.4);
+    }
+
+    &--link {
+      cursor: pointer;
+
+      &:hover {
+        .reel__frame-overlay {
+          opacity: 1;
+          background: rgba($void, 0.9);
+        }
+      }
     }
 
     // Film grain overlay
@@ -138,6 +157,42 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    z-index: 1;
+  }
+
+  // Hover overlay — reveals full article title
+  &__frame-overlay {
+    position: absolute;
+    inset: 0 0 26px 0; // sits above the caption strip
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.22s ease, background 0.22s ease;
+    pointer-events: none;
+  }
+
+  &__frame-title {
+    @include screenplay-text;
+    font-size: 0.44rem;
+    color: rgba($silver, 0.9);
+    line-height: 1.6;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  &__frame-cta {
+    @include screenplay-text;
+    font-size: 0.44rem;
+    color: $amber;
+    letter-spacing: 3px;
   }
 
   // Frame tones (mood backgrounds when no image is set)
@@ -157,5 +212,7 @@
 
     &__frame-placeholder { height: calc(100% - 22px); }
     &__frame-caption     { height: 22px; font-size: 0.45rem; }
+    &__frame-overlay     { inset: 0 0 22px 0; }
+    &__frame-title       { -webkit-line-clamp: 3; }
   }
 }
