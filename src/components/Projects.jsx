@@ -87,7 +87,8 @@ const projects = [
     description: 'A React-based portfolio showcasing the intersection of technology and artistry. Built with modern tools while maintaining timeless aesthetic principles.',
     tech:        ['React', 'SCSS', 'Figma', 'JavaScript'],
     tone:        'midnight',
-    url:         'https://agent-6a065d0debd6dfd--illustrious-kelpie-9c45a8.netlify.app/',
+    url:         'https://agent-6a065d0debd6dfd--illustrious-kelpie-9c45a8.netlify.app/', 
+    img:         '/images/img_orig_portfolio.jpeg',
   },
   {
     scene:       '3H',

@@ -101,9 +101,9 @@ const About = () => {
           <div className="about__director-notes">
             <p className="about__narrator">NARRATOR (V.O.)</p>
             <p className="about__note">
-              Chéye isn&rsquo;t just a developer—they&rsquo;re a storyteller who happens to speak
+              Chéye isn&rsquo;t just a developer—she&rsquo;s a storyteller who happens to speak
               in code. With roots in journalism and branches reaching into AI-native
-              development, they bridge worlds that rarely meet.
+              development, she bridges worlds that rarely meet.
             </p>
             <p className="about__note">
               Every project is a new scene. Every line of code, a new line of dialogue.
