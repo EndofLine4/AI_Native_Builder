@@ -323,10 +323,18 @@
   border-left: 3px solid rgba($amber, 0.35);
   padding: 1.75rem;
   transition: all 0.3s ease;
+  position: relative;
 
   &:hover {
     border-left-color: $amber;
     background: rgba($amber, 0.025);
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: pointer;
   }
 
   &__title {
