@@ -95,7 +95,7 @@ const articles = [
     title: 'Trumbull Residents at Odds Over Zoning Change',
     url: 'https://www.ctpost.com/local/article/Trumbull-residents-at-odds-over-zoning-change-8321781.php',
     tone: 'steel',
-    img: '/images/trumbull_zoning.png',
+    img: '/images/planning_zoning_commission.jpg',
   },
   {
     id: 'CTP-02',
