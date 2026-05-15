@@ -35,6 +35,7 @@ const Header = () => {
         </button>
 
         <ul className={`nav__menu ${isOpen ? 'nav__menu--open' : ''}`} role="list">
+          <li><a href="https://github.com/EndofLine4" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
           <li><button onClick={() => scrollTo('about')}>ABOUT</button></li>
           <li><button onClick={() => scrollTo('projects')}>PROJECTS</button></li>
           <li><button onClick={() => scrollTo('contact')}>CONTACT</button></li>

@@ -21,6 +21,7 @@ const projects = [
     tech:        ['React', 'TypeScript', 'Lovable AI', 'Figma'],
     tone:        'midnight',
     url:         'https://omny-app-redesign.lovable.app',
+    img:         '/images/img_omny.png',
   },
   {
     scene:       '3B',
@@ -31,6 +32,7 @@ const projects = [
     tech:        ['JavaScript', 'TensorFlow.js', 'Canvas API', 'GitHub Pages'],
     tone:        'amber',
     url:         'https://endofline4.github.io/DashSign/',
+    img:         '/images/img_dashsign.png',
   },
   {
     scene:       '3C',
@@ -41,6 +43,7 @@ const projects = [
     tech:        ['React', 'Claude AI', 'Node.js', 'Netlify'],
     tone:        'teal',
     url:         'https://agent-6a0649b68a7ebbe48b59f2f7--pardna.netlify.app/pardna.html',
+    img:         '/images/img_pardna.png',
   },
   {
     scene:       '3D',
@@ -51,6 +54,7 @@ const projects = [
     tech:        ['React', 'Claude AI', 'Figma'],
     tone:        'midnight',
     url:         'https://www.loom.com/share/d4bc0d9bc6334ca1a6f3c13347381e98',
+    img:         '/images/img_dressstack.png',
   },
   {
     scene:       '3E',
@@ -61,6 +65,7 @@ const projects = [
     tech:        ['React', 'Figma', 'Claude AI'],
     tone:        'amber',
     url:         'https://www.loom.com/share/6e279e7649d24b00ac64511a51002798',
+    img:         '/images/img_blapp.png',
   },
   {
     scene:       '3F',
@@ -71,6 +76,7 @@ const projects = [
     tech:        ['Loom API', 'Claude AI', 'React', 'Base44'],
     tone:        'crimson',
     url:         'https://loom-pulse-pro.base44.app',
+    img:         '/images/img_loom.png',
   },
   // ── Coded from scratch ────────────────────────────────────────────────────
   {
@@ -112,6 +118,7 @@ const projects = [
     tech:        ['WordPress', 'CSS', 'Photoshop'],
     tone:        'crimson',
     url:         'https://bcmmedia.biz/',
+    img:         '/images/img_bcm.png',
   },
 ];
 
