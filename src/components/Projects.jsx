@@ -28,7 +28,7 @@ const projects = [
     title:       'DashSign',
     tagline:     'Every Hand Tells a Story',
     category:    'ACCESSIBILITY · GAME',
-    description: "Born from a father's love for his non-verbal autistic son — a driving game where your hands do the talking. Players learn American Sign Language not through drills, but through speed and the open road. Note: you'll need to enable your webcam to play. The highway becomes a classroom.",
+    description: "I didn't just set out to build a game — I set out to talk to my son. He's non-verbal and autistic, and full of things the world hasn't learned to hear yet. So I built DashSign: a driving game where your hands do the talking and American Sign Language becomes the road. Note: you'll need to enable your webcam to play.",
     tech:        ['JavaScript', 'TensorFlow.js', 'Canvas API', 'GitHub Pages'],
     tone:        'amber',
     url:         'https://endofline4.github.io/DashSign/',
