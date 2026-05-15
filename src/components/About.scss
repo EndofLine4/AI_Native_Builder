@@ -129,6 +129,45 @@
     z-index: 2;
   }
 
+  &__play-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    background: rgba($silver, 0.1);
+    border: 1px solid rgba($silver, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    svg {
+      color: rgba($silver, 0.6);
+      transition: color 0.3s ease;
+      margin-left: 2px;
+    }
+
+    &:hover {
+      background: rgba($silver, 0.15);
+      border-color: rgba($amber, 0.4);
+      transform: scale(1.05);
+
+      svg {
+        color: $amber;
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
   &__portrait-plate {
     padding: 0.9rem 1.4rem;
     border-top: 1px solid rgba($amber, 0.2);

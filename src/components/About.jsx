@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './About.scss';
 
 const passions = [
   {
     num: '01',
     title: 'CINEMA',
-    body: "From Hitchcock's suspense to Wes Anderson's symmetry, from Criterion classics to contemporary masterpieces. Every frame tells a story, and every story shapes perspective.",
+    body: "From Hitchcock's suspense to Barry Jenkins' luminous intimacy, from Criterion classics to contemporary masterpieces. Every frame tells a story, and every story shapes perspective.",
     accent: 'amber',
   },
   {
@@ -40,7 +40,20 @@ const passions = [
   },
 ];
 
-const About = () => (
+const About = () => {
+  const videoRef = useRef(null);
+
+  const handlePlayVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = 0;
+    video.play().catch(() => {
+      video.load();
+      video.play();
+    });
+  };
+
+  return (
   <section className="about" id="about">
     <div className="about__grain" aria-hidden="true" />
 
@@ -66,11 +79,13 @@ const About = () => (
             */}
             <div className="about__portrait-art">
               <video
+                ref={videoRef}
                 className="about__portrait-video"
                 autoPlay
                 muted
                 playsInline
-                onEnded={(e) => e.target.pause()}
+                preload="auto"
+                onEnded={() => videoRef.current?.pause()}
               >
                 <source src="/video/tigerstylevid.mp4" type="video/mp4" />
               </video>
@@ -126,7 +141,8 @@ const About = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default About;
 
