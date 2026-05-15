@@ -127,6 +127,7 @@ const miniProjects = [
     title:       'Halloween Tic Tac Toe',
     description: 'Halloween themed game built to exercise logic and problem solving skills while having fun with vanilla JavaScript.',
     tech:        ['HTML', 'CSS', 'JavaScript'],
+    url:         'https://endofline4.github.io/halloween-tic-tac-toe/',
   },
 ];
 
@@ -231,6 +232,15 @@ const Projects = () => {
           <div className="shorts__grid">
             {miniProjects.map((p, i) => (
               <div key={i} className="short-card">
+                {p.url && (
+                  <a
+                    className="short-card__link"
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${p.title}`}
+                  />
+                )}
                 <h4 className="short-card__title">{p.title}</h4>
                 <p className="short-card__desc">{p.description}</p>
                 <div className="short-card__tech">
